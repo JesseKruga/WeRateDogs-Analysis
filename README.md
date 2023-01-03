@@ -1,15 +1,15 @@
 # WeRateDogs-project
-INTRODUCTION
+## INTRODUCTION
 The goal is to wrangle WeRateDogs Twitter data to create interesting and trustworthy analyses and visualizations. The Twitter archive is great, but it only contains very basic tweet information. Additional gathering, then assessing and cleaning is required for "Wow!"-worthy analyses and visualizations, the following steps where taken to ensure that the goal was achieved:
 
-GATHERING
+## GATHERING
 Imported the required libraries
 Downloaded The image file programmatically using the URL
 Read the json text file line by line
 Loaded the dataframes required
 Reduced df api to 3 columns namely: id,retweet count ,favorite count
 Ensured the dataframes were loaded correctly
-ACCESSING
+## ACCESSING
 df_archive2
 Looked at the column names
 Checked the string values for the names in the name column whether there is an error
@@ -34,8 +34,8 @@ Looked at the column names
 Used .describe to get a mathematical perspective
 Realised the id column of this dataframe and the tweet_id column of the df_archive2 were similar but 2 values were missing from this dataframe
 All this was used to get an idea of the 3 datasets and issues to be cleaned and the issues are documented below:
-OBSERVATIONS
-QUALITY ISSUES
+
+## QUALITY ISSUES
 df_archive2
 Source values are in a '<a href=url '
 Timestamp is in a wrong datatype
@@ -52,7 +52,7 @@ Change the id datatype # TIDINESS ISSUES
 The puppo,floofer,doggo and pupper should be in a single column
 Drop the retweeted_status_id,retweeted_status_user_id,retweeted_status_timestamp,in_reply_to_status_id , in_reply_to_user_id columns
 The 3 dataframes should be merged into one
-CLEANING
+## CLEANING
  - df_archive1
 Created a copy of all the dataframes
 Using the define,code,test format i did the following:
@@ -65,8 +65,7 @@ The datatype of the tweet id column was changed using astype because the ids are
 I ensured only null values where present in the in_reply_to_status_id , in_reply_to_user_id , retweeted_status_id ,retweeted_status_user_id, retweeted_status_timestamp columns hence removing all the retweets
 Dropped all the above mentioned columns in the dataframe
 Merged the puppo,pupper,floofer,doggo columns into 1 column called dog_stage by first extracting the text into the dog_stage column then drop the actual puppo,pupper,floofer,doggo columns this ensured tidiness as puppo,pupper,floofer,doggo are actually dog stages
-
-df_image1
+   -  df_image1
 The '_' used in the p1,p2,p3 columns are replaced with spaces using the .str.replace() this ensured the content of the columns were clear and logical
 I created a function to properly capitalise the contents of the 'p' columns then I used .apply to apply that function this was done to ensure uniformity in the cases of the records
 I merged the 3 dataframes into 1 dataframe and converted the tweet_id and id columns in the other two dataframes to the string datatype and I stored the new dataframe clean_archive in a csv
