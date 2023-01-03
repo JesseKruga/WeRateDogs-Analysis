@@ -65,11 +65,11 @@ The datatype of the tweet id column was changed using astype because the ids are
 I ensured only null values where present in the in_reply_to_status_id , in_reply_to_user_id , retweeted_status_id ,retweeted_status_user_id, retweeted_status_timestamp columns hence removing all the retweets
 Dropped all the above mentioned columns in the dataframe
 Merged the puppo,pupper,floofer,doggo columns into 1 column called dog_stage by first extracting the text into the dog_stage column then drop the actual puppo,pupper,floofer,doggo columns this ensured tidiness as puppo,pupper,floofer,doggo are actually dog stages
-   -  df_image1
+ -  df_image1
 The '_' used in the p1,p2,p3 columns are replaced with spaces using the .str.replace() this ensured the content of the columns were clear and logical
 I created a function to properly capitalise the contents of the 'p' columns then I used .apply to apply that function this was done to ensure uniformity in the cases of the records
 I merged the 3 dataframes into 1 dataframe and converted the tweet_id and id columns in the other two dataframes to the string datatype and I stored the new dataframe clean_archive in a csv
-CONCLUSION
+## CONCLUSION
 Due to wrangling efforts the merged dataset is ready for visualisation and the following was noticed as the wrangling was taking place :
 
 No null values were in the name column only faulty names
